@@ -1,7 +1,7 @@
 {
   "name": "katschangular-three-states-toggle",
   "version": "1.0.0",
-  "description": "Simple Toggle Switch with 3 states based on Angular Material",
+  "description": "Simple Toggle Switch with three states based on Angular Material",
   "author": "Tobias Karzewski <tobias@karzewski.de>",
   "license": "MIT",
   "repository": {
@@ -11,7 +11,21 @@
   "bugs": {
     "url": "https://github.com/tkarzewski/katschangular-three-states-toggle/issues"
   },
-  "homepage": "https://tkarzewski.github.io/katschangular-three-states-toggle",
+  "homepage": "https://tkarzewski.github.io/katschangular-three-states-toggle/",
+  "keywords": [
+    "angular",
+    "ng",
+    "ng2",
+    "ngx",
+    "toggle",
+    "switch",
+    "three states",
+    "input",
+    "form",
+    "checkbox",
+    "boolean",
+    "component"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
