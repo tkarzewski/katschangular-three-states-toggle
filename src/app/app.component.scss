@@ -1,0 +1,30 @@
+pre {
+  font-size: 1rem;
+  color: #000;
+  background-color: #f0f0f0;
+}
+
+button {
+  margin-left: 1rem;
+  outline: none !important;
+
+  &.selected {
+    background-color: #f0f0f0;
+  }
+}
+
+.control {
+  font-size: 1rem;
+}
+
+ol {
+  font-size: 1rem;
+  li {
+    margin-bottom: 1rem;
+  }
+  code {
+    color: #000;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+  }
+}

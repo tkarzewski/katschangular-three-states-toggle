@@ -1,27 +1,44 @@
-# KatschangularTriToggleApp
+# Katschangular Three States Toggle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Simple Angular Toggle Switch with three states: `true`, `false`, and `null`/`undefined`.
 
-## Development server
+See the [demo](https://tkarzewski.github.io/katschangular-three-states-toggle/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## What is this
+This is a simple Angular Component which supports next to the states `true` or `false` a thirs state that is `null`/`undefined`.
+It is based on [Angular Material](https://material.angular.io/)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick start
+```
+<katschangular-three-states-toggle
+  color="accent"
+  [label]="label"
+  [disabled]="disabled"
+  [(value)]="value">
+</katschangular-three-states-toggle>
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Detailed instructions
 
-## Running unit tests
+1. A recommended way to install ***katschangular-three-states-toggle*** is through [npm](https://www.npmjs.com/search?q=three-states-toggle)
+   package manager using the following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   `npm i -S katschangular-three-states-toggle`
 
-## Running end-to-end tests
+2. Import `KatschangularThreeStatesToggleModule` into the module that declares the component using ***katschangular-three-states-toggle***:
+   <br>```import { KatschangularThreeStatesToggleModule } from 'katschangular-three-states-toggle';```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+3. Add it to `[imports]` under `@NgModule`:
+   <br>```imports: [ ... KatschangularThreeStatesToggleModule, ... ]```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+4. Use the component in your Template:
+   ```
+   <katschangular-three-states-toggle
+    color="accent"
+    [label]="label"
+    [disabled]="disabled"
+    [(value)]="value">
+   </katschangular-three-states-toggle>
+   ```

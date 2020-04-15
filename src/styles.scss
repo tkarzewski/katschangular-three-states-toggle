@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+@import 'projects/katschangular-three-states-toggle/src/lib/katschangular-three-states-toggle.component';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define your application's custom theme.
+$primary: mat-palette($mat-blue);
+$accent:  mat-palette($mat-green);
+$theme: mat-light-theme($primary, $accent);
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($theme);
+
+// Include theme styles for your custom components.
+@include katschangular-three-states-toggle-theme($theme);
+
+
+body {
+  background-color: #fafafa;
+}
