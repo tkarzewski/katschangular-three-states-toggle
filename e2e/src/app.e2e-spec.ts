@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('katschangular-tri-toggle-app app is running!');
+    expect(page.getTitleText()).toEqual('katschangular-three-states-toggle-app app is running!');
   });
 
   afterEach(async () => {

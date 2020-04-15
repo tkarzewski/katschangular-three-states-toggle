@@ -1,0 +1,203 @@
+@import '~@angular/material/theming';
+
+$height: 14px;
+$border-radius: 7px; // $height / 2
+$width: 45px;
+
+$color-false: #757575;
+$bg-color-false: rgba(0, 0, 0, .25);
+
+$color-none: #fff;
+$bg-color-none: rgba(0, 0, 0, 0.1);
+
+$color-disabled: #c4c4c4;
+$bg-color-disabled: rgba(137, 137, 137, 0.25);
+
+
+@mixin katschangular-three-states-toggle-theme($theme) {
+
+  $theme-primary: map-get($theme, primary);
+  $theme-accent: map-get($theme, accent);
+
+  $color-true-primary: mat-color($theme-primary);
+  $bg-color-true-primary: mat-color($theme-primary, 200);
+
+  $color-true-accent: mat-color($theme-accent);
+  $bg-color-true-accent: mat-color($theme-accent, A200);
+
+  .mat-slider {
+
+    &.state-true.mat-primary {
+      .mat-slider-wrapper {
+        .mat-slider-track-wrapper {
+          .mat-slider-track-background {
+            background-color: $bg-color-true-primary;
+          }
+          .mat-slider-track-fill {
+            background-color: $bg-color-true-primary;
+          }
+        }
+      }
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          background-color: $color-true-primary;
+        }
+      }
+    }
+
+    &.state-true.mat-accent {
+      .mat-slider-wrapper {
+        .mat-slider-track-wrapper {
+          .mat-slider-track-background {
+            background-color: $bg-color-true-accent;
+          }
+          .mat-slider-track-fill {
+            background-color: $bg-color-true-accent;
+          }
+        }
+      }
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          background-color: $color-true-accent;
+        }
+      }
+    }
+
+  }
+}
+
+
+.katschangular-three-states-toggle {
+
+  cursor: pointer;
+
+  mat-slider {
+    cursor: grab;
+  }
+
+  .mat-slide-toggle-content {
+
+    padding: 15px;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;;
+    -moz-user-select: none !important;;
+    -ms-user-select: none !important;;
+    user-select: none !important;;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    mat-slider {
+      cursor: not-allowed;
+    }
+
+    .mat-slide-toggle-content {
+      color: $color-disabled;
+    }
+
+    ::ng-deep mat-slider {
+
+    }
+  }
+
+  ::ng-deep mat-slider {
+    width: $width;
+    min-width: $width !important;
+    max-width: $width !important;
+    margin-right: 0.5rem;
+
+    .mat-slider-wrapper {
+      height: $height !important;
+      top: 16px !important;
+      width: $width !important;
+
+      .mat-slider-track-wrapper {
+        height: $height;
+        border-radius: $border-radius;
+
+        .mat-slider-track-background {
+          height: $height;
+        }
+
+        .mat-slider-track-fill {
+          height: $height;
+        }
+      }
+
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          border: none !important;
+          height: 20px !important;
+          width: 20px !important;
+          transform: unset !important;
+          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+        }
+      }
+    }
+
+    &.state-false {
+      .mat-slider-wrapper {
+        .mat-slider-track-wrapper {
+          .mat-slider-track-background {
+            background-color: $bg-color-false;
+          }
+
+          .mat-slider-track-fill {
+            background-color: $bg-color-false;
+          }
+        }
+
+      }
+
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          background-color: $color-false;
+        }
+      }
+    }
+
+    &.state-none {
+      .mat-slider-wrapper {
+        .mat-slider-track-wrapper {
+          .mat-slider-track-background {
+            background-color: $bg-color-none;
+          }
+
+          .mat-slider-track-fill {
+            background-color: $bg-color-none;
+          }
+        }
+      }
+
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          background-color: $color-none;
+        }
+      }
+    }
+
+    &.state-disabled {
+      .mat-slider-wrapper {
+        .mat-slider-track-wrapper {
+          .mat-slider-track-background {
+            background-color: $bg-color-disabled;
+          }
+
+          .mat-slider-track-fill {
+            background-color: $bg-color-disabled;
+          }
+        }
+
+      }
+
+      .mat-slider-thumb-container {
+        .mat-slider-thumb {
+          background-color: $color-disabled;
+        }
+      }
+    }
+
+  }
+
+}

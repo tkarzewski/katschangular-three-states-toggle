@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "katschangular-tri-toggle-app": {
+    "katschangular-three-states-toggle-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,9 +11,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "preserveSymlinks": true,
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/katschangular-tri-toggle-app",
+            "outputPath": "dist/katschangular-three-states-toggle-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -63,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "katschangular-tri-toggle-app:build"
+            "browserTarget": "katschangular-three-states-toggle-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "katschangular-tri-toggle-app:build:production"
+              "browserTarget": "katschangular-three-states-toggle-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "katschangular-tri-toggle-app:build"
+            "browserTarget": "katschangular-three-states-toggle-app:build"
           }
         },
         "test": {
@@ -89,7 +91,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -111,15 +114,50 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "katschangular-tri-toggle-app:serve"
+            "devServerTarget": "katschangular-three-states-toggle-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "katschangular-tri-toggle-app:serve:production"
+              "devServerTarget": "katschangular-three-states-toggle-app:serve:production"
             }
           }
         }
       }
+    },
+    "katschangular-three-states-toggle": {
+      "projectType": "library",
+      "root": "projects/katschangular-three-states-toggle",
+      "sourceRoot": "projects/katschangular-three-states-toggle/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/katschangular-three-states-toggle/tsconfig.lib.json",
+            "project": "projects/katschangular-three-states-toggle/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/katschangular-three-states-toggle/src/test.ts",
+            "tsConfig": "projects/katschangular-three-states-toggle/tsconfig.spec.json",
+            "karmaConfig": "projects/katschangular-three-states-toggle/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/katschangular-three-states-toggle/tsconfig.lib.json",
+              "projects/katschangular-three-states-toggle/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
-  "defaultProject": "katschangular-tri-toggle-app"
+  "defaultProject": "katschangular-three-states-toggle-app"
 }

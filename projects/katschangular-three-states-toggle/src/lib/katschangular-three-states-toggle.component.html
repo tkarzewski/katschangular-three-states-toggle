@@ -1,0 +1,22 @@
+<span class="katschangular-three-states-toggle" [class.disabled]="disabled">
+
+  <mat-slider
+    #triToggleSlider
+    class="katschangular-three-states-toggle-slider"
+    [ngClass]="toggleClass"
+    [color]="color"
+    [value]="intValue"
+    [min]="0"
+    [max]="100"
+    [step]="50"
+    [disabled]="disabled"
+    (input)="toggleValue($event.value)">
+  </mat-slider>
+  <span
+    *ngIf="label"
+    class="mat-slide-toggle-content"
+    (click)="toggle()">
+    {{ label }}
+  </span>
+
+</span>
