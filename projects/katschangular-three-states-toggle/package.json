@@ -1,6 +1,6 @@
 {
   "name": "katschangular-three-states-toggle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Toggle Switch with three states based on Angular Material",
   "author": "Tobias Karzewski <tobias@karzewski.de>",
   "license": "MIT",
